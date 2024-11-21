@@ -39,17 +39,17 @@ const TaskForm = ({ task, onSave, onClose }) => {
                 type="text"
                 value={nombre}
                 onChange={(e) => setNombre(e.target.value)}
-                placeholder="Nombre"
+                placeholder="Nombre de la tarea"
                 required
             />
             <textarea
                 value={descripcion}
                 onChange={(e) => setDescripcion(e.target.value)}
-                placeholder="Descripción"
+                placeholder="Descripción de la tarea"
                 required
             />
             {/* Campo de estado oculto, pero se establece como "pendiente" por defecto */}
-            <input type="hidden" value={estado} />
+            <input type="text" value={estado} />
             {task && (
                 <label>
                     Estado:

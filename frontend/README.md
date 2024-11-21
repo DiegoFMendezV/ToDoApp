@@ -1,70 +1,47 @@
-# Getting Started with Create React App
+# Desarrollo Fullstack Laravel + React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este proyecto consiste en un Gestor de Tareas desarrollado en el backend con Laravel donde se crea el API y en el Frontend con React.js donde se consume y se gestiona las tareas. Soporta operaciones CRUD (Crear, Leer, Actualizar, Eliminar). La aplicación permite a los usuarios ver, agregar, editar y eliminar publicaciones mediante un modal, y muestra las publicaciones en formato de tabla con capacidades de ordenamiento.
 
-## Available Scripts
+# OBJETIVO
 
-In the project directory, you can run:
+Proyecto realizado con el fin de presentar prueba técnica para el puesto de Desarrollador Fullstack Junior de la empresa CONYKO
 
-### `npm start`
+# REQUISITOS PREVIOS
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Asegúrate de tener instalado NODE.js en tu máquina de desarrollo local, también un servidor local como XAMPP.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# PROYECTO
 
-### `npm test`
+Debemos clonar el proyecto mediante Github, mediante el siguiente comando
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### `git clone https://github.com/DiegoFMendezV/ToDoApp.git`
 
-### `npm run build`
+Navega al directorio del proyecto
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### `cd ToDoApp`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Una vez obtenido el proyecto debemos correr:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### `composer install`
 
-### `npm run eject`
+Por último ejecutar el servidor de desarrollo.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### `php artisan serve`
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+El proyecto se estará ejecutando localmente en[http://127.0.0.1:8000/api/tasks](http://127.0.0.1:8000/api/tasks)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### REPOSITORIO
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+El proyecto estará alojado en GitHub para su consulta a través del siguiente [Link](https://github.com/DiegoFMendezV/ToDoApp)
 
-## Learn More
+# AUTOR
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Desarrollador Junior
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+DIEGO FERNANDO MENDEZ VARGAS
 
-### Code Splitting
+3115913254
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+diego.mendez7716@gmail.com
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+https://www.linkedin.com/in/diego-fernando-mendez-vargas/
