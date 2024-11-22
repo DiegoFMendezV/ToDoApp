@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import './estilos.css'
 
 const url = 'http://localhost:8000/api/task'
 
@@ -18,9 +19,9 @@ const CreateTask = () => {
     }
 
     return (
-        <div>
-            <h3>Crear Tarea</h3>
-            <form onSubmit={store}>
+        <div className='container'>
+            <h3 className='title'>Crear Tarea</h3>
+            <form className='form' onSubmit={store}>
                 <div className='mb-3'>
                     <label className="form-label">Nombre</label>
                     <input 

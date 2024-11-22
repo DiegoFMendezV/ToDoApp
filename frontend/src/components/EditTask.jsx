@@ -33,9 +33,9 @@ const EditTask = () => {
     }, [id] )
 
   return (
-    <div>
-        <h3>Editar Tarea</h3>
-        <form onSubmit={update}>
+    <div className='container'>
+        <h3 className='title'>Editar Tarea</h3>
+        <form className='form' onSubmit={update}>
             <div className='mb-3'>
                 <label className="form-label">Nombre</label>
                 <input 

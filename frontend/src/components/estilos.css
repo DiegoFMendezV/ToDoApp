@@ -1,0 +1,20 @@
+.title{
+    text-align: center;
+    color: #28466d;
+    margin: 50px 0;
+}
+
+.btnCrear{
+    width: 200px;
+    margin-bottom: 20px;
+}
+
+.btnEdit{
+    margin: 0 15px;
+}
+
+.form{
+    margin: 0 300px;
+    border: 1px solid black;
+    padding: 20px;
+}

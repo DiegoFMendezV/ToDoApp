@@ -22,11 +22,11 @@ Navega al directorio del proyecto
 
 Una vez obtenido el proyecto debemos correr:
 
-### `composer install`
+### `npm install`
 
 Por último ejecutar el servidor de desarrollo.
 
-### `php artisan serve`
+### `npm start`
 
 El proyecto se estará ejecutando localmente en[http://127.0.0.1:8000/api/tasks](http://127.0.0.1:8000/api/tasks)
 

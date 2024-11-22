@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-
+import './estilos.css'
 import {Link} from 'react-router-dom'
 
 const url = 'http://localhost:8000/api'
@@ -17,20 +17,25 @@ const TaskList = () => {
     };
 
     const handleDelete = async (id) => {
-        await axios.delete(`${url}/task/${id}`);
-        fetchTasks();
+        const confirmation = window.confirm('¿Estás seguro de que deseas eliminar esta tarea?');
+        if (confirmation) {
+            await axios.delete(`${url}/task/${id}`);
+            fetchTasks();
+        } else {
+            alert('La tarea no fue eliminada.');
+        }
     };
 
     return (
         <div className='container'>
-            <h1>Gestor de Tareas</h1>
-            <div className='d-grid gap-2'>
-                <Link to="/create" className='btn btn-success btn-lg mt-2 mb-2 text-white'>Crear</Link>
+            <h1 className='title'>Gestor de Tareas</h1>
+            <div className='btnCrear d-grid gap-2'>
+                <Link to="/create" className='btn btn-success btn-lg mt-2 mb-2 text-white'>Crear Nueva Tarea</Link>
             </div>
-            <table className='table table-striped'>
+            <table className='table table-striped table-bordered'>
                 <thead className='bg-primary text-white'>
                     <tr>
-                        <th>Nombre</th>
+                        <th>Nombre Tarea</th>
                         <th>Descripcion</th>
                         <th>Estado</th>
                         <th>Acciones</th>
@@ -43,7 +48,7 @@ const TaskList = () => {
                             <td>{task.descripcion}</td>
                             <td>{task.estado}</td>
                             <td>
-                                <Link to={`/edit/${task.id}`} className='btn btn-warning'>Editar</Link>
+                                <Link to={`/edit/${task.id}`} className='btnEdit btn btn-warning'>Editar</Link>
                                 <button onClick={ ()=>handleDelete(task.id) } className='btn btn-danger'>Eliminar</button>
                             </td>
                         </tr>
