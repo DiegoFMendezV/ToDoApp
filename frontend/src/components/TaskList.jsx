@@ -1,59 +1,53 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import TaskForm from './TaskForm';
+
+import {Link} from 'react-router-dom'
+
+const url = 'http://localhost:8000/api'
 
 const TaskList = () => {
-    const [tasks, setTasks] = useState([]);
-    const [selectedTask, setSelectedTask] = useState(null);
-    const [isModalOpen, setIsModalOpen] = useState(false);
-
+    const [tasks, setTasks] = useState([])
+    useEffect ( ()=> {
+        fetchTasks()
+    }, [])
+    
     const fetchTasks = async () => {
-        const response = await axios.get('http://127.0.0.1:8000/api/tasks');
+        const response = await axios.get(`${url}/tasks`);
         setTasks(response.data);
     };
 
     const handleDelete = async (id) => {
-        await axios.delete(`http://127.0.0.1:8000/api/tasks/${id}`);
+        await axios.delete(`${url}/task/${id}`);
         fetchTasks();
     };
-
-    const handleSave = () => {
-        fetchTasks();
-        setIsModalOpen(false);
-        setSelectedTask(null);
-    };
-
-    useEffect(() => {
-        fetchTasks();
-    }, []);
 
     return (
-        <div>
-            <button onClick={() => { setIsModalOpen(true); setSelectedTask(null); }}>Nueva Tarea</button>
-            {isModalOpen && (
-                <TaskForm task={selectedTask} onSave={handleSave} onClose={() => setIsModalOpen(false)} />
-            )}
-            <table>
-                <thead>
+        <div className='container'>
+            <h1>Gestor de Tareas</h1>
+            <div className='d-grid gap-2'>
+                <Link to="/create" className='btn btn-success btn-lg mt-2 mb-2 text-white'>Crear</Link>
+            </div>
+            <table className='table table-striped'>
+                <thead className='bg-primary text-white'>
                     <tr>
                         <th>Nombre</th>
-                        <th>Descripción</th>
+                        <th>Descripcion</th>
                         <th>Estado</th>
                         <th>Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {tasks.map(task => (
+                    { tasks.map( (task) =>(
                         <tr key={task.id}>
                             <td>{task.nombre}</td>
                             <td>{task.descripcion}</td>
-                            <td>{task.estado ? 'Completo' : 'Pendiente'}</td>
+                            <td>{task.estado}</td>
                             <td>
-                                <button onClick={() => { setSelectedTask(task); setIsModalOpen(true); }}>Editar</button>
-                                <button onClick={() => handleDelete(task.id)}>Eliminar</button>
+                                <Link to={`/edit/${task.id}`} className='btn btn-warning'>Editar</Link>
+                                <button onClick={ ()=>handleDelete(task.id) } className='btn btn-danger'>Eliminar</button>
                             </td>
                         </tr>
-                    ))}
+                    )) }
                 </tbody>
             </table>
         </div>
